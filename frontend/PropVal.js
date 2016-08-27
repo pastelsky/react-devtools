@@ -44,8 +44,8 @@ function previewProp(val: any, nested: boolean) {
     return <span style={valueStyles.number}>{val}</span>;
   }
   if (typeof val === 'string') {
-    if (val.length > 50) {
-      val = val.slice(0, 50) + '…';
+    if (val.length > 35) {
+      val = val.slice(0, 35) + '…';
     }
 
     return <span style={valueStyles.string}>
@@ -97,11 +97,11 @@ function previewProp(val: any, nested: boolean) {
 
 function previewArray(val) {
   var items = {};
-  val.slice(0, 3).forEach((item, i) => {
+  val.slice(0, 2).forEach((item, i) => {
     items['n' + i] = <PropVal val={item} nested={true} />;
     items['c' + i] = ', ';
   });
-  if (val.length > 3) {
+  if (val.length > 2) {
     items.last = '…';
   } else {
     delete items['c' + (val.length - 1)];
@@ -116,13 +116,13 @@ function previewArray(val) {
 function previewObject(val) {
   var names = Object.keys(val);
   var items = {};
-  names.slice(0, 3).forEach((name, i) => {
+  names.slice(0, 2).forEach((name, i) => {
     items['k' + i] = <span style={valueStyles.attr}>{name}</span>;
     items['c' + i] = ': ';
     items['v' + i] = <PropVal val={val[name]} nested={true} />;
     items['m' + i] = ', ';
   });
-  if (names.length > 3) {
+  if (names.length > 2) {
     items.rest = '…';
   } else {
     delete items['m' + (names.length - 1)];

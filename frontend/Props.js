@@ -33,7 +33,7 @@ class Props extends React.Component {
     });
 
     var items = [];
-    names.slice(0, 3).forEach(name => {
+    names.slice(0, 2).forEach(name => {
       items.push(
         <span key={name} style={styles.prop}>
           <span style={styles.propName}>{name}</span>
@@ -52,7 +52,6 @@ class Props extends React.Component {
 
 var styles = {
   prop: {
-    display: 'inline-block',
     paddingLeft: 5,
   },
 
