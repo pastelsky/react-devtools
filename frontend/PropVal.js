@@ -48,11 +48,13 @@ function previewProp(val: any, nested: boolean) {
       val = val.slice(0, 35) + '…';
     }
 
-    return <span style={valueStyles.string}>
-      <span style={{ color: 'rgb(168, 148, 166)' }}>"</span>
-        {val}
+    return (
+      <span style={valueStyles.string}>
         <span style={{ color: 'rgb(168, 148, 166)' }}>"</span>
-    </span>;
+          {val}
+        <span style={{ color: 'rgb(168, 148, 166)' }}>"</span>
+      </span>
+     );
   }
   if (typeof val === 'boolean') {
     return <span style={valueStyles.bool}>{'' + val}</span>;
