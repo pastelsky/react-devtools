@@ -12,7 +12,7 @@
 
 module.exports = {
   func: {
-    color: '#170',
+    color: '#147b6a',
   },
 
   attr: {
